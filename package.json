@@ -1,0 +1,25 @@
+{
+  "name": "Express-Crash-Course",
+  "version": "1.0.0",
+  "description": "Projeto criado para estudo da API Express em Javascript/Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeDominguesB/Express-Crash-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeDominguesB/Express-Crash-Course/issues"
+  },
+  "homepage": "https://github.com/FelipeDominguesB/Express-Crash-Course#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
