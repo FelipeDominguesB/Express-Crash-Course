@@ -1,4 +1,5 @@
 const express = require('express');
+const uuid = require('uuid');
 const router = express.Router();
 const members = require('../../Members.js');
 
@@ -30,9 +31,23 @@ router.get('/:id', (req, res)=>{
 
 router.post('/', (req, res)=>{
     const newMember ={
-        
+        id: uuid.v4(),
+        nome: req.body.name,
+        email: req.body.email,
+        idade: req.body.idade,
+        Genero: req.body.genero,
+        Cidade: req.body.cidade
     }
-    res.send(req.body);
+
+    if(!newMember.nome || !newMember.email)
+    {
+        return res.status(400).json({
+            msg: 'Inclua nome e email na requisição'
+        });
+    }
+    
+    members.push(newMember);
+    res.json(members);
 })
 
 module.exports = router;
