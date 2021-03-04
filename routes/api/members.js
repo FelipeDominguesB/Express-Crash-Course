@@ -50,4 +50,26 @@ router.post('/', (req, res)=>{
     res.json(members);
 })
 
+router.put('/:id', (req, res)=>{
+    const found = members.some(member => member.id === parseInt(req.params.id));  
+
+    if(found)
+    {
+        const updtMember = req.body;
+        members.forEach(member=>{
+            if(member.id === parseInt(req.params.id))
+            {
+                member.nome = updtMember.nome ? updtMember.nome : member.nome;
+                member.email = updtMember.email ? updtMember.email : member.email;
+            
+            res.json({msg: 'Cadastro atualizado', member});
+            }
+        });
+    }
+    else
+    {
+
+    }
+});
+
 module.exports = router;
